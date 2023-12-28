@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+  
+  /* Đặt màu nền */
+body {
+    background-color: #DCDCDC;
+    font-family: Helvetica, sans-serif;
+}
+  
+  /* Thanh thời gian thực tế (thước đo dọc) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin-left: 30px;
+}
+  
+  /* Thanh thời gian thực tế (thước đo dọc) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -30px;
+}
+  
+  /* Container xung quanh nội dung */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+  
+  /* Các hình tròn trên thời gian */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+  
+  /* Đặt container bên trái */
+.left {
+    left: 0;
+}
+  
+  /* Đặt container bên phải */
+.right {
+    left: 50%;
+}
+  
+  /* Thêm mũi tên vào container bên trái (hướng sang phải) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+  
+  /* Thêm mũi tên vào container bên phải (hướng sang trái) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+  
+  /* Sửa hình tròn cho các container bên phải */
+.right::after {
+    left: -16px;
+}
+  
+  /* Nội dung thực tế */
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+    /* Containers toàn màn hình */
+.container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+}
+  
+    /* Đảm bảo tất cả mũi tên đều hướng sang trái */
+.container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+}
+  
+    /* Đảm bảo tất cả các hình tròn nằm ở cùng một vị trí */
+.left::after,
+    .right::after {
+      left: 15px;
+}
+  
+    /* Làm cho tất cả các container bên phải hoạt động giống như container bên trái */
+.right {
+      left: 0%;
+}
+
+  
